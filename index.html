@@ -5,7 +5,9 @@
     <title>Cat Clicker</title>
 </head>
 <body>
-  <ul id="cat-list"></ul>
+  <ul data-bind="foreach: catList" id="cat-list">
+    <li data-bind="text: name, click: $parent.setCat"></li>
+  </ul>
   <!-- Documentation: http://knockoutjs.com/documentation/with-binding.html -->
   <div id="cat" data-bind="with: currentCat">
     <h2 data-bind="text: name" id="cat-name"></h2>
